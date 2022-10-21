@@ -3,7 +3,9 @@ const Theme = {
 
     },
     colors: {
-
+        background: "#ddd",
+        primary: "#555",
+        textPrimary: "#fff",
     },
 };
 
