@@ -5,6 +5,7 @@ const Theme = {
     colors: {
         background: "#ddd",
         primary: "#555",
+        secondary: "#888",
         textPrimary: "#fff",
     },
 };
