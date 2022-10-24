@@ -1,19 +1,28 @@
-import { useDispatch } from "react-redux";
-import { check } from "../../../slice";
+import { useDispatch, useSelector } from "react-redux";
+import { check, selectStatus } from "../../../slice";
 import { Container, Picture } from "./styled";
 
 const Card = ({ card }) => {
     const dispatch = useDispatch();
+    const status = useSelector(selectStatus);
+
+    const onClickHandler = () => {
+        if (status !== "waiting"){
+            dispatch(check(card.id));
+        };
+    };
 
     return (
         <Container
-            onClick={() => dispatch(check(card.id))}
+            onClick={onClickHandler}
             checked={card.checked}
             matched={card.matched}
         >
             <Picture
                 src={require(`./images/brains/${card.number}.svg`)}
                 alt={card.number}
+                checked={card.checked}
+                matched={card.matched}
             />
         </Container>
     );
