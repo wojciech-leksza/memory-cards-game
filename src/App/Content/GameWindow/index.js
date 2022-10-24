@@ -1,18 +1,16 @@
 import Card from "./Card";
 import { Container } from "./styled";
 import { v4 as uuid } from 'uuid';
+import { useSelector } from "react-redux";
+import { selectCards } from "../../slice";
 
 const GameWindow = () => {
-
-    const numbers = Array(2).fill([1, 2, 3, 4, 5, 6]).flat();
-    const shuffledNumbers = numbers.sort(function () {
-        return Math.random() - 0.5;
-      });
+    const cards = useSelector(selectCards);
 
     return (
         <Container>
-            {shuffledNumbers.map(number => (
-                <Card key={uuid()} number={number}/>
+            {cards.map(card => (
+                <Card key={uuid()} card={card}/>
             ))}
         </Container>
     );

@@ -1,50 +1,54 @@
 import { createSlice } from "@reduxjs/toolkit";
+import generateCards from "./cardsGenerator";
 
 const memoryGameSlice = createSlice({
-    name: "homePage",
+    name: "memoryGame",
     initialState: {
-        isGameOn: true,
+        status: "init",
         moves: 0,
-        time: 0,
         level: [4, 3],
-        cards: [
-            {
-                id: 1,
-                matched: false,
-            },
-            {
-                id: 2,
-                matched: false,
-            },
-            {
-                id: 3,
-                matched: false,
-            },
-            {
-                id: 4,
-                matched: false,
-            },
-            {
-                id: 5,
-                matched: false,
-            },
-            {
-                id: 6,
-                matched: false,
-            },
-        ],
+        cards: generateCards([4, 3]),
     },
     reducers: {
-
+        setCards: (state, { payload: cards }) => {
+            state.cards = cards
+        },
+        addMove: (state) => {
+            state.moves = state.moves + 1
+        },
+        check: (state, { payload: id }) => {
+            state.cards.find(card => card.id === id).checked = true
+        },
+        uncheckAll: (state) => {
+            state.cards = state.cards.map(card => ({ ...card, checked: false }))
+        },
+        setMatched: (state, { payload: number }) => {
+            state.cards.forEach(card => {
+                if (card.number === number) {
+                    card.matched = true
+                }
+            })
+        },
     },
 });
 
 export const {
-
+    setCards,
+    addMove,
+    check,
+    uncheckAll,
+    setMatched,
 } = memoryGameSlice.actions;
 
 const selectMemoryGameState = state => state.memoryGame;
 export const selectIsGameOn = state => selectMemoryGameState(state).isGameOn;
 export const selectMoves = state => selectMemoryGameState(state).moves;
+export const selectLevel = state => selectMemoryGameState(state).level;
+export const selectCards = state => selectMemoryGameState(state).cards;
+
+export const selectCheckedCards = state => (
+    selectMemoryGameState(state).cards.filter(({ checked }) => checked === true)
+);
+
 
 export default memoryGameSlice.reducer;
