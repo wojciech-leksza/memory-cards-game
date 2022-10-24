@@ -1,5 +1,5 @@
 import { put, takeEvery, select, delay } from 'redux-saga/effects';
-import { addMove, check, selectCheckedCards, setMatched, setStatus, uncheckAll } from './slice';
+import { addMove, check, selectIsComplete, selectCheckedCards, setMatched, setStatus, uncheckAll } from './slice';
 
 function* checkHandler() {
     const checkedCards = yield select(selectCheckedCards);
@@ -15,6 +15,12 @@ function* checkHandler() {
 
         yield put(uncheckAll());
         yield put(addMove());
+
+        const isComplete = yield select(selectIsComplete);
+
+        if (isComplete) {
+            yield put(setStatus("finish"));
+        };
     };
 };
 

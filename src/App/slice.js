@@ -45,6 +45,7 @@ export const {
 } = memoryGameSlice.actions;
 
 const selectMemoryGameState = state => state.memoryGame;
+
 export const selectIsGameOn = state => selectMemoryGameState(state).isGameOn;
 export const selectMoves = state => selectMemoryGameState(state).moves;
 export const selectLevel = state => selectMemoryGameState(state).level;
@@ -53,6 +54,10 @@ export const selectStatus = state => selectMemoryGameState(state).status;
 
 export const selectCheckedCards = state => (
     selectMemoryGameState(state).cards.filter(({ checked }) => checked === true)
+);
+
+export const selectIsComplete = state => (
+    selectMemoryGameState(state).cards.every(({ matched }) => matched === true)
 );
 
 

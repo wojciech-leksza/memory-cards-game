@@ -7,7 +7,7 @@ const Card = ({ card }) => {
     const status = useSelector(selectStatus);
 
     const onClickHandler = () => {
-        if (status !== "waiting"){
+        if (status === "play"){
             dispatch(check(card.id));
         };
     };
