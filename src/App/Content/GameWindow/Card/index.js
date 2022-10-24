@@ -2,7 +2,7 @@ import { Container } from "./styled";
 
 const Card = ({ number }) => (
     <Container>
-        {number}
+        <img src={require(`./images/brains/${number}.svg`)} alt={number} />
     </Container>
 );
 
