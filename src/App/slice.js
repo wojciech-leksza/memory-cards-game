@@ -32,6 +32,9 @@ const memoryGameSlice = createSlice({
         setStatus: (state, { payload: status }) => {
             state.status = status
         },
+        setLevel: (state, { payload: level }) => {
+            state.level = level
+        },
     },
 });
 
@@ -42,6 +45,7 @@ export const {
     uncheckAll,
     setMatched,
     setStatus,
+    setLevel,
 } = memoryGameSlice.actions;
 
 const selectMemoryGameState = state => state.memoryGame;
