@@ -30,8 +30,14 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const OptionButton = styled.button`
-    background-color: ${({ theme: { colors } }) => colors.textPrimary};
-    color: ${({ theme: { colors } }) => colors.primary};
+    background-color: ${({ active }) => active
+        ? ({ theme: { colors } }) => colors.primary
+        : ({ theme: { colors } }) => colors.textPrimary
+    };
+    color: ${({ active }) => active
+        ? ({ theme: { colors } }) => colors.textPrimary
+        : ({ theme: { colors } }) => colors.primary
+    };
     font-size: 20px;
     padding: 10px 30px;
     border: none;
