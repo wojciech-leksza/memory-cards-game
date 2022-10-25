@@ -38,4 +38,13 @@ export const OptionButton = styled.button`
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: bold;
+
+    &:hover {
+        filter: brightness(0.9);
+    }
+
+    &:active {
+        filter: brightness(1);
+        box-shadow: inset 2px 2px 4px 0px #333;
+    }
 `;
