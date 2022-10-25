@@ -39,6 +39,13 @@ const memoryGameSlice = createSlice({
         setDelay: (state, { payload: delay }) => {
             state.delay = delay
         },
+        restart: (state) => ({
+            status: "play",
+            moves: 0,
+            level: state.level,
+            cards: generateCards(state.level),
+            delay: state.delay,
+        })
     },
 });
 
@@ -51,6 +58,7 @@ export const {
     setStatus,
     setLevel,
     setDelay,
+    restart,
 } = memoryGameSlice.actions;
 
 const selectMemoryGameState = state => state.memoryGame;

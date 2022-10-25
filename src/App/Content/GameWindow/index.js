@@ -2,7 +2,7 @@ import Card from "./Card";
 import { Container, Overlay, Result, StartButton, ResultTitle, ResultRow, ResultButton } from "./styled";
 import { v4 as uuid } from 'uuid';
 import { useDispatch, useSelector } from "react-redux";
-import { selectCards, selectLevel, selectStatus, setStatus } from "../../slice";
+import { restart, selectCards, selectLevel, selectStatus, setStatus } from "../../slice";
 
 const GameWindow = () => {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const GameWindow = () => {
                         <ResultTitle>Congratulations!</ResultTitle>
                         <ResultRow>moves: 23</ResultRow>
                         <ResultRow>time: 00:00:00</ResultRow>
-                        <ResultButton>
+                        <ResultButton onClick={() => dispatch(restart())}>
                             Play again!
                         </ResultButton>
                     </Result>
