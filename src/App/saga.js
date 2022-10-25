@@ -11,17 +11,19 @@ import {
     setLevel,
     selectLevel,
     setCards,
+    selectDelay,
 } from './slice';
 
 function* checkHandler() {
     const checkedCards = yield select(selectCheckedCards);
+    const delayTime = yield select(selectDelay);
 
     if (checkedCards.length === 2) {
         if (checkedCards[0].number === checkedCards[1].number) {
             yield put(setMatched(checkedCards[0].number));
         } else {
             yield put(setStatus("waiting"));
-            yield delay(1500);
+            yield delay(delayTime);
             yield put(setStatus("play"))
         };
 
