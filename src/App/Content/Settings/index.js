@@ -3,34 +3,33 @@ import { ButtonsContainer, Container, Option, OptionButton, OptionName } from ".
 const Settings = () => (
     <Container>
         <Option>
-            <OptionName>Nazwa:</OptionName>
+            <OptionName>level:</OptionName>
             <ButtonsContainer>
-                <OptionButton>Opcja1</OptionButton>
-                <OptionButton>Opcja2</OptionButton>
-                <OptionButton>Opcja3</OptionButton>
+                <OptionButton>4x3</OptionButton>
+                <OptionButton>4x4</OptionButton>
+                <OptionButton>5x4</OptionButton>
+                <OptionButton>5x5</OptionButton>
+                <OptionButton>6x5</OptionButton>
             </ButtonsContainer>
         </Option>
         <Option>
-            <OptionName>Nazwa:</OptionName>
+            <OptionName>design:</OptionName>
             <ButtonsContainer>
-                <OptionButton>Opcja1</OptionButton>
-                <OptionButton>Opcja2</OptionButton>
+                <OptionButton>standard</OptionButton>
             </ButtonsContainer>
         </Option>
         <Option>
-            <OptionName>Nazwa:</OptionName>
+            <OptionName>speed:</OptionName>
             <ButtonsContainer>
-                <OptionButton>Opcja1</OptionButton>
-                <OptionButton>Opcja2</OptionButton>
+                <OptionButton>slow</OptionButton>
+                <OptionButton>medium</OptionButton>
+                <OptionButton>fast</OptionButton>
             </ButtonsContainer>
         </Option>
         <Option>
-            <OptionName>Nazwa:</OptionName>
+            <OptionName>pictures:</OptionName>
             <ButtonsContainer>
-                <OptionButton>Opcja1</OptionButton>
-                <OptionButton>Opcja2</OptionButton>
-                <OptionButton>Opcja3</OptionButton>
-                <OptionButton>Opcja4</OptionButton>
+                <OptionButton>brains</OptionButton>
             </ButtonsContainer>
         </Option>
     </Container>
