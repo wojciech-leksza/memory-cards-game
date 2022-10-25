@@ -1,5 +1,4 @@
-import { put, takeEvery, select, delay, call } from 'redux-saga/effects';
-import generateCards from './cardsGenerator';
+import { put, takeEvery, select, delay } from 'redux-saga/effects';
 import {
     addMove,
     check,
@@ -8,9 +7,6 @@ import {
     setMatched,
     setStatus,
     uncheckAll,
-    setLevel,
-    selectLevel,
-    setCards,
     selectDelay,
 } from './slice';
 
@@ -38,14 +34,6 @@ function* checkHandler() {
     };
 };
 
-function* setLevelHandler() {
-    const level = yield select(selectLevel);
-    const cards = yield call(generateCards, level);
-    yield put(setStatus("init"));
-    yield put(setCards(cards));
-};
-
 export function* memoryGameSaga() {
     yield takeEvery(check.type, checkHandler);
-    yield takeEvery(setLevel.type, setLevelHandler);
 };
