@@ -20,6 +20,8 @@ export const OptionName = styled.p`
     font-size: 24px;
     align-self: center;
     margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -34,4 +36,6 @@ export const OptionButton = styled.button`
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
 `;

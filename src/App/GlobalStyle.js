@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     };
 
     body {
-    font-family: 'Inter', sans-serif;
+        font-family: 'Fuzzy Bubbles', cursive;
     background-color: ${({ theme: { colors } }) => colors.background};
     };
 `;
