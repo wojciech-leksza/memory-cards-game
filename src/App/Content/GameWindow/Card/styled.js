@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.button`
     aspect-ratio: 1;
-    border: ${props => (props.checked ? "solid 10px #000" : "none")};
     border-radius: 5px;
-    background-color: ${props => (props.matched ? "#888" : "#fff")};
+    background-color: ${props => (props.checked ? "#aaa" : "#888")};
+    filter: blur(${props => (props.matched ? "5px" : "0")});
 `;
 export const Picture = styled.img`
-    width: 60%;
+    width: 90%;
     margin: auto;
     display: ${({ checked, matched }) => (checked || matched ? "" : "none")};
 `;

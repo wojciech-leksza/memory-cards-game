@@ -12,4 +12,9 @@ export const Parameter = styled.p`
     margin: 20px 40px;
     color: ${({ theme: { colors } }) => colors.textPrimary};
     font-size: 24px;
+
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}) {
+        font-size: 16px;
+        margin: 10px;
+    };
 `;

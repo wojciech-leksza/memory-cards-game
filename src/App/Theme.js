@@ -1,6 +1,6 @@
 const Theme = {
     breakpoints: {
-
+        mobileMax: "719px",
     },
     colors: {
         background: "#ddd",
