@@ -88,7 +88,7 @@ const Settings = () => {
             <Option>
                 <OptionName>pictures:</OptionName>
                 <ButtonsContainer>
-                    <OptionButton>brains</OptionButton>
+                    <OptionButton active>brains</OptionButton>
                 </ButtonsContainer>
             </Option>
         </Container>
