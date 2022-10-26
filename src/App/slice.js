@@ -9,6 +9,7 @@ const memoryGameSlice = createSlice({
         level: [4, 3],
         cards: generateCards([4, 3]),
         delay: 1000,
+        startTime: null,
     },
     reducers: {
         setCards: (state, { payload: cards }) => {
@@ -27,8 +28,8 @@ const memoryGameSlice = createSlice({
             state.cards.forEach(card => {
                 if (card.number === number) {
                     card.matched = true
-                }
-            })
+                };
+            });
         },
         setStatus: (state, { payload: status }) => {
             state.status = status
@@ -39,16 +40,22 @@ const memoryGameSlice = createSlice({
             level,
             cards: generateCards(level),
             delay: state.delay,
+            startTime: null,
         }),
         setDelay: (state, { payload: delay }) => {
             state.delay = delay
         },
+        start: (state) => {
+            state.startTime = new Date().getTime();
+            state.status = "play";
+        },
         restart: (state) => ({
-            status: "play",
+            status: "init",
             moves: 0,
             level: state.level,
             cards: generateCards(state.level),
             delay: state.delay,
+            startTime: null,
         }),
     },
 });
@@ -62,6 +69,7 @@ export const {
     setStatus,
     setLevel,
     setDelay,
+    start,
     restart,
 } = memoryGameSlice.actions;
 
@@ -73,6 +81,7 @@ export const selectLevel = state => selectMemoryGameState(state).level;
 export const selectCards = state => selectMemoryGameState(state).cards;
 export const selectStatus = state => selectMemoryGameState(state).status;
 export const selectDelay = state => selectMemoryGameState(state).delay;
+export const selectStartTime = state => selectMemoryGameState(state).startTime;
 
 export const selectCheckedCards = state => (
     selectMemoryGameState(state).cards.filter(({ checked }) => checked === true)
