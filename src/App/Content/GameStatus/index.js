@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import { selectMoves } from "../../slice";
+import { useTimer } from "../../timer";
 import { Container, Parameter } from "./styled";
 
 const GameStatus = () => {
     const moves = useSelector(selectMoves);
+    const timer = useTimer();
 
     return (
         <Container>
@@ -11,7 +13,7 @@ const GameStatus = () => {
                 Moves: {moves}
             </Parameter>
             <Parameter>
-                00:00:00
+                {timer}
             </Parameter>
         </Container>
     );
