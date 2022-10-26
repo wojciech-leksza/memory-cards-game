@@ -1,25 +1,29 @@
 {
   "files": {
     "main.css": "/memory-cards-game/static/css/main.58462fbc.css",
-    "main.js": "/memory-cards-game/static/js/main.d8d51c36.js",
-    "static/media/6.svg": "/memory-cards-game/static/media/6.4c609ab0ac61a07fd882.svg",
-    "static/media/error.svg": "/memory-cards-game/static/media/error.782101cc66e92b61e8e0.svg",
+    "main.js": "/memory-cards-game/static/js/main.22a33cd8.js",
+    "static/media/9.svg": "/memory-cards-game/static/media/9.4c609ab0ac61a07fd882.svg",
+    "static/media/15.svg": "/memory-cards-game/static/media/15.642ffae0c3b9da1332df.svg",
     "static/media/7.svg": "/memory-cards-game/static/media/7.6f10793e282df6904cb8.svg",
     "static/media/11.svg": "/memory-cards-game/static/media/11.0151a6bad52b2c11624c.svg",
     "static/media/5.svg": "/memory-cards-game/static/media/5.25fa45b64a74b7ade218.svg",
+    "static/media/13.svg": "/memory-cards-game/static/media/13.5896df16c595638f29ca.svg",
     "static/media/2.svg": "/memory-cards-game/static/media/2.1e3f0d5888a14e8e4e74.svg",
+    "static/media/6.svg": "/memory-cards-game/static/media/6.8c74890bd4a4b9634efc.svg",
+    "static/media/14.svg": "/memory-cards-game/static/media/14.8a970d19c1b94d504010.svg",
+    "static/media/16.svg": "/memory-cards-game/static/media/16.c9b3154cb8ab7c599070.svg",
     "static/media/10.svg": "/memory-cards-game/static/media/10.c0eb638c309a3b5fc40d.svg",
-    "static/media/9.svg": "/memory-cards-game/static/media/9.ade703a248a5b3f5c06e.svg",
+    "static/media/12.svg": "/memory-cards-game/static/media/12.ade703a248a5b3f5c06e.svg",
     "static/media/1.svg": "/memory-cards-game/static/media/1.364c8d49404c36d4ff23.svg",
     "static/media/4.svg": "/memory-cards-game/static/media/4.506179d6292921ff8a16.svg",
     "static/media/3.svg": "/memory-cards-game/static/media/3.442e952b1045ca562154.svg",
     "static/media/8.svg": "/memory-cards-game/static/media/8.61b8270cf62e84dea767.svg",
     "index.html": "/memory-cards-game/index.html",
     "main.58462fbc.css.map": "/memory-cards-game/static/css/main.58462fbc.css.map",
-    "main.d8d51c36.js.map": "/memory-cards-game/static/js/main.d8d51c36.js.map"
+    "main.22a33cd8.js.map": "/memory-cards-game/static/js/main.22a33cd8.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.d8d51c36.js"
+    "static/js/main.22a33cd8.js"
   ]
 }
