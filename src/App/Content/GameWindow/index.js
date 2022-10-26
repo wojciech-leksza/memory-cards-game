@@ -2,7 +2,8 @@ import Card from "./Card";
 import { Container, Overlay, Result, StartButton, ResultTitle, ResultRow, ResultButton } from "./styled";
 import { v4 as uuid } from 'uuid';
 import { useDispatch, useSelector } from "react-redux";
-import { restart, selectCards, selectLevel, selectMoves, selectStatus, setStatus } from "../../slice";
+import { restart, selectCards, selectLevel, selectMoves, selectStatus, start } from "../../slice";
+import { useTime } from "../../timer";
 
 const GameWindow = () => {
     const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const GameWindow = () => {
     const status = useSelector(selectStatus);
     const level = useSelector(selectLevel);
     const moves = useSelector(selectMoves);
+    const time = useTime();
 
     return (
         <Container columns={level[0]}>
@@ -18,7 +20,7 @@ const GameWindow = () => {
             ))}
             {status === "init"
                 ? <Overlay>
-                    <StartButton onClick={() => dispatch(setStatus("play"))}>
+                    <StartButton onClick={() => dispatch(start())}>
                         start
                     </StartButton>
                 </Overlay>
@@ -29,7 +31,7 @@ const GameWindow = () => {
                     <Result>
                         <ResultTitle>Congratulations!</ResultTitle>
                         <ResultRow>moves: {moves}</ResultRow>
-                        <ResultRow>time: 00:00:00</ResultRow>
+                        <ResultRow>time: {time}</ResultRow>
                         <ResultButton onClick={() => dispatch(restart())}>
                             Play again!
                         </ResultButton>
