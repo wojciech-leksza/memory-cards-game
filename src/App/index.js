@@ -1,19 +1,21 @@
-import { Provider } from "react-redux";
-import store from "./store";
-import GlobalStyle from "./GlobalStyle";
+import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
+import { selectTheme } from "./slice";
+import GlobalStyle from "./GlobalStyle";
 import Theme from "./Theme";
 import Header from "./Header";
 import Content from "./Content";
 
-const App = () => (
-  <Provider store={store}>
-    <ThemeProvider theme={Theme}>
+const App = () => {
+  const themeName = useSelector(selectTheme);
+
+  return (
+    <ThemeProvider theme={Theme(themeName)}>
       <GlobalStyle />
       <Header />
       <Content />
     </ThemeProvider>
-  </Provider>
-);
+  );
+};
 
 export default App;

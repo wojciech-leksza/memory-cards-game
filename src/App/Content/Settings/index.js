@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectDelay, selectLevel, setDelay, setLevel } from "../../slice";
+import { selectDelay, selectLevel, selectTheme, setDelay, setLevel, setTheme } from "../../slice";
 import { ButtonsContainer, Container, Option, OptionButton, OptionName } from "./styled";
 
 const Settings = () => {
     const dispatch = useDispatch();
     const level = useSelector(selectLevel);
     const delayTime = useSelector(selectDelay);
-    console.log(level)
+    const theme = useSelector(selectTheme);
+
     return (
         <Container>
             <Option>
@@ -41,7 +42,24 @@ const Settings = () => {
             <Option>
                 <OptionName>design:</OptionName>
                 <ButtonsContainer>
-                    <OptionButton>standard</OptionButton>
+                    <OptionButton
+                        onClick={() => dispatch(setTheme("standard"))}
+                        active={theme === "standard"}
+                    >
+                        standard
+                    </OptionButton>
+                    <OptionButton
+                        onClick={() => dispatch(setTheme("black"))}
+                        active={theme === "black"}
+                    >
+                        black
+                    </OptionButton>
+                    <OptionButton
+                        onClick={() => dispatch(setTheme("blue"))}
+                        active={theme === "blue"}
+                    >
+                        blue
+                    </OptionButton>
                 </ButtonsContainer>
             </Option>
             <Option>

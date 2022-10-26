@@ -25,7 +25,7 @@ export const Option = styled.div`
 `;
 
 export const OptionName = styled.p`
-    color: ${({ theme: { colors } }) => colors.textPrimary};
+    color: ${({ theme: { colors } }) => colors.textSecondary};
     font-size: 24px;
     align-self: center;
     margin: 0;
@@ -50,12 +50,12 @@ export const ButtonsContainer = styled.div`
 
 export const OptionButton = styled.button`
     background-color: ${({ active }) => active
-        ? ({ theme: { colors } }) => colors.primary
-        : ({ theme: { colors } }) => colors.textPrimary
+        ? ({ theme: { colors } }) => colors.special
+        : ({ theme: { colors } }) => colors.primary
     };
     color: ${({ active }) => active
-        ? ({ theme: { colors } }) => colors.textPrimary
-        : ({ theme: { colors } }) => colors.primary
+        ? ({ theme: { colors } }) => colors.textSecondary
+        : ({ theme: { colors } }) => colors.textPrimary
     };
     font-size: 20px;
     padding: 10px 30px;

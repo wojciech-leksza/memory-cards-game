@@ -5,6 +5,7 @@ const memoryGameSlice = createSlice({
     name: "memoryGame",
     initialState: {
         status: "init",
+        theme: "standard",
         moves: 0,
         level: [4, 3],
         cards: generateCards([4, 3]),
@@ -45,6 +46,9 @@ const memoryGameSlice = createSlice({
         setDelay: (state, { payload: delay }) => {
             state.delay = delay
         },
+        setTheme: (state, { payload: theme }) => {
+            state.theme = theme
+        },
         start: (state) => {
             state.startTime = new Date().getTime();
             state.status = "play";
@@ -69,6 +73,7 @@ export const {
     setStatus,
     setLevel,
     setDelay,
+    setTheme,
     start,
     restart,
 } = memoryGameSlice.actions;
@@ -82,6 +87,7 @@ export const selectCards = state => selectMemoryGameState(state).cards;
 export const selectStatus = state => selectMemoryGameState(state).status;
 export const selectDelay = state => selectMemoryGameState(state).delay;
 export const selectStartTime = state => selectMemoryGameState(state).startTime;
+export const selectTheme = state => selectMemoryGameState(state).theme;
 
 export const selectCheckedCards = state => (
     selectMemoryGameState(state).cards.filter(({ checked }) => checked === true)

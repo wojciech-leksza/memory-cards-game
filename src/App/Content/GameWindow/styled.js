@@ -18,7 +18,7 @@ export const Overlay = styled.div`
 `;
 
 export const StartButton = styled.button`
-    border: 2px solid #fff;
+    border: 2px solid ${({ theme: { colors } }) => colors.special};
     border-radius: 5px;
     background-color: ${({ theme: { colors } }) => colors.primary};
     color: ${({ theme: { colors } }) => colors.textPrimary};
@@ -40,7 +40,7 @@ export const Result = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    border: 2px solid #fff;
+    border: 2px solid ${({ theme: { colors } }) => colors.textPrimary};
     border-radius: 5px;
     background-color: ${({ theme: { colors } }) => colors.primary};
     color: ${({ theme: { colors } }) => colors.textPrimary};
@@ -51,6 +51,7 @@ export const Result = styled.div`
 export const ResultTitle = styled.h2`
     font-size: 36px;
     margin: 0 0 20px;
+    color: ${({ theme: { colors } }) => colors.special};
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}) {
         font-size: 24px;
@@ -69,7 +70,7 @@ export const ResultRow = styled.h2`
 
 export const ResultButton = styled.button`
     background-color: inherit;
-    border: 2px solid ${({ theme: { colors } }) => colors.textPrimary};
+    border: 2px solid ${({ theme: { colors } }) => colors.special};
     border-radius: 5px;
     color: ${({ theme: { colors } }) => colors.textPrimary};
     font-size: 26px;

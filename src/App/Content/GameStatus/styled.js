@@ -10,7 +10,7 @@ export const Container = styled.section`
 
 export const Parameter = styled.p`
     margin: 20px 40px;
-    color: ${({ theme: { colors } }) => colors.textPrimary};
+    color: ${({ theme: { colors } }) => colors.textSecondary};
     font-size: 24px;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}) {
