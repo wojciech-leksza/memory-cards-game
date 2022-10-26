@@ -51,11 +51,20 @@ export const Result = styled.div`
 export const ResultTitle = styled.h2`
     font-size: 36px;
     margin: 0 0 20px;
+
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}) {
+        font-size: 24px;
+        margin-bottom: 12px;
+    };
 `;
 
 export const ResultRow = styled.h2`
     font-size: 22px;
     margin: 0;
+    
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}) {
+        font-size: 15px;
+    };
 `;
 
 export const ResultButton = styled.button`
@@ -75,4 +84,9 @@ export const ResultButton = styled.button`
         filter: brightness(1);
         box-shadow: inset 3px 3px 7px 0px #333;
     }
+    
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}) {
+        font-size: 18px;
+        padding: 10px 15px 7px;
+    };
 `;
